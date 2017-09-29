@@ -198,7 +198,7 @@
 			<code>  throw new Error();</code>
 			<code>})</code>
 			<code>  .then(() => console.log('all if ok'));</code>
-			<code>// unhandled promise rejection</code>
+			<code class="next comment">// unhandled promise rejection</code>
 		</pre>
 	</section>
 
@@ -209,7 +209,7 @@
 			<code>  throw new Error();</code>
 			<code>});</code>
 			<code>window.onunhandledrejection = function(rejectedPromise){</code>
-			<code> // do everything you want</code>
+			<code class="next comment"> // do everything you want</code>
 			<code>};</code>
 		</pre>
 	</section>
@@ -231,7 +231,7 @@
 			<code>try {</code>
 			<code>  const a = await rejection;</code>
 			<code>} catch (error) {</code>
-			<code>  // error from reject</code>
+			<code class="next comment">  // error from reject</code>
 			<code>}</code>
 		</pre>
 	</section>
