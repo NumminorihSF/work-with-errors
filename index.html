@@ -226,7 +226,7 @@
 	</section>
 
 	<section class="slide">
-		<h2>Async ecxeption</h2>
+		<h2>Async exception</h2>
 		<pre>
 			<code>try {</code>
 			<code>  const a = await rejection;</code>
@@ -234,6 +234,41 @@
 			<code class="next comment">  // error from reject</code>
 			<code>}</code>
 		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>It works but...</h2>
+		<p>Your code may work for you. But it also should work in real world.</p>
+		<ul>
+			<li class="next">Old browser (missed polyfill)</li>
+			<li class="next">Browser's plugins</li>
+			<li class="next">Other scripts (ads)</li>
+			<li class="next">Bad connection</li>
+			<li class="next">Proxy, VPN</li>
+			<li class="next">Firewall</li>
+		</ul>
+		<p class="next">We should know if something go wrong.</p>
+	</section>
+
+	<section class="slide">
+		<h2>Easy monitoring</h2>
+		<pre>
+			<code>window.onerror = function(error) {</code>
+			<code>  new Image().src = 'https://my.domain/error?' +</code>
+			<code>    'message=' + encodeURIComponent(error.message) +</code>
+			<code>    'stack=' + encodeURIComponent(error.stack)</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Don't write your own</h2>
+		<ul>
+			<li>Error in error's handler</li>
+			<li class="next">Store errors</li>
+			<li class="next">Check if error is new</li>
+			<li class="next">Display errors</li>
+		</ul>
 	</section>
 
 	<footer class="badge">
