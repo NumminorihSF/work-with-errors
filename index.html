@@ -159,9 +159,9 @@
 		<pre>
 			<code>try {</code>
 			<code>  throw ...;</code>
-			<code>} catch (error) {</code>
-			<code>  if (error instanceof MyError) console.error('My error');</code>
-			<code>  else if (error.name === 'Error') console.error('Created error');</code>
+			<code>} catch (err) {</code>
+			<code>  if (err instanceof MyError) console.error('My error');</code>
+			<code>  else if (err.name === 'Error') console.error('Created error');</code>
 			<code>  else console.error('Engine error');</code>
 			<code>}</code>
 		</pre>
@@ -172,8 +172,8 @@
 		<pre>
 			<code>try {</code>
 			<code>  throw ...;</code>
-			<code>} catch (error) {</code>
-			<code>  if (error instanceof MyError) doSomethingInCaseOfMyError();</code>
+			<code>} catch (err) {</code>
+			<code>  if (err instanceof MyError) doSomethingInCaseOfMyError();</code>
 			<code>  else throw error;</code>
 			<code>}</code>
 		</pre>
@@ -186,7 +186,7 @@
 			<code>  throw new Error();</code>
 			<code>})</code>
 			<code>  .catch(err => console.error(err) })</code>
-			<code>  .then(() => console.log('all if ok'));</code>
+			<code>  .then(() => console.log('all is ok'));</code>
 		</pre>
 	</section>
 
@@ -209,7 +209,7 @@
 			<code>new Promise(() => {</code>
 			<code>  throw new Error();</code>
 			<code>})</code>
-			<code>  .then(() => console.log('all if ok'));</code>
+			<code>  .then(() => console.log('all is ok'));</code>
 			<code class="next comment">// unhandled promise rejection</code>
 		</pre>
 	</section>
@@ -221,7 +221,8 @@
 			<code>  throw new Error();</code>
 			<code>});</code>
 			<code>window.onunhandledrejection = function(rejectedPromise){</code>
-			<code class="next comment"> // do everything you want</code>
+			<code class="comment">//     onUnhandledRejection</code>
+			<code><span class="next comment">// do everything you want</span></code>
 			<code>};</code>
 		</pre>
 	</section>
