@@ -168,6 +168,18 @@
 	</section>
 
 	<section class="slide">
+		<h2>Re-throw</h2>
+		<pre>
+			<code>try {</code>
+			<code>  throw ...;</code>
+			<code>} catch (error) {</code>
+			<code>  if (error instanceof MyError) doSomethingInCaseOfMyError();</code>
+			<code>  else throw error;</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
 		<h2>Promise</h2>
 		<pre>
 			<code>new Promise(() => {</code>
